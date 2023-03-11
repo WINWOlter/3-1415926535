@@ -1,4 +1,5 @@
 import requests
+from colorama import Fore, Back, Style
 
 #help(requests)
 
@@ -15,9 +16,9 @@ class Brouser:
   def load_page(self):
     r = requests.get(self.url)
     if r.status_code == 200:
-      print("Page is loaded")
+      print(Fore.GREEN + "Page is loaded")
     else:
-      print("Some error")
+      print(Fore.RED + "Some error")
 
-my_b = Brouser("https://mystat.itstep.org/ru/main/dashboard/page/index")
+my_b = Brouser("https://mail.google.com/mail/u/0/#inbox")
 my_b.load_page()
